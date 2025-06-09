@@ -1,0 +1,15 @@
+.day-container{
+    border: black solid 1px;
+    padding: 10px 10px;
+    margin: 8px;
+    border-radius: 12px;
+}
+
+.hot{
+    color: red;
+
+}
+
+.cold{
+    color:blue;
+}

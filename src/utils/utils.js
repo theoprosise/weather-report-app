@@ -8,7 +8,7 @@ function formatDate(isoDate){
 }
 
 function parseForecastData(data){
-    return data.list.map(weather => ({
+    let all = data.list.map(weather => ({
         date: formatDate(weather.dt_txt),
         temperature: kelvinToFahrenheit(weather.main.temp),
         weather: weather.weather[0].main,
@@ -17,8 +17,13 @@ function parseForecastData(data){
         
     }));
 
+    return all.reduce((unique, item) => {
+        if(!unique.find(d => d.date === item.date)){
+            unique.push(item);
+        }
+        return unique;
+    }, [])
 };
 
-//codepathWeather2525!
 
 export {parseForecastData}

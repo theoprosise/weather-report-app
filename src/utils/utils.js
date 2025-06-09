@@ -4,8 +4,7 @@ function kelvinToFahrenheit(kelv) {
 
 function formatDate(isoDate){
     let date = new Date(isoDate);
-    date.toLocaleString(undefined,{ weekday: "short",month: "short",day: "numeric"});
-    return date;
+    return date.toLocaleString(undefined,{ weekday: "short",month: "short",day: "numeric"});
 }
 
 function parseForecastData(data){
@@ -19,5 +18,7 @@ function parseForecastData(data){
     }));
 
 };
+
+//codepathWeather2525!
 
 export {parseForecastData}

@@ -14,10 +14,6 @@ function Day({date, temperature, weather, icon}) {
   );
 }
 
-Day.PropTypes = {
-    date: PropTypes.string.isRequired,
-    temperature: PropTypes.string.isRequired,
-    weather: PropTypes.string.isRequired
-};
+
 
 export default Day;

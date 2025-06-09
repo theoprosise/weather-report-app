@@ -4,10 +4,12 @@ import Day from "./Day";
 import { parseForecastData } from "./utils/utils";
 import PropTypes from "prop-types";
 
-function Forecast({data}) {
+function Forecast({city, data}) {
 
   let parsedData = parseForecastData(data);
   return (
+    <>
+    <p>Location: {city ? city : ""} </p>
         <div
             style = {{
                 display: "flex",
@@ -23,6 +25,7 @@ function Forecast({data}) {
         ))}
         
             </div>
+            </>
   );
 }
 

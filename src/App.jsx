@@ -6,7 +6,7 @@ import data from "./data/data.js";
 
 function App() {
   let [city, setCity] = useState("Austin");
-  let [weatherData, setWeatherData] = useState({});
+  let [weatherData, setWeatherData] = useState(data);
 
   const fetchData = async () => {
     const apiKey = import.meta.env.VITE_APP_API_KEY;

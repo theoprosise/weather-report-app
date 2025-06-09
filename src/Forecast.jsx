@@ -1,9 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Day from "./Day";
+import { parseForecastData } from "./utils/utils";
+import PropTypes from "prop-types";
 
+function Forecast({data}) {
 
-function Forecast() {
+  let parsedData = parseForecastData(data);
   return (
         <div
             style = {{
@@ -12,13 +15,19 @@ function Forecast() {
                 flexWrap:"wrap",
             }}
             >
-        <Day date="1-1-1" temperature="40" weather="Sunny" />
-        <Day date="1-1-1" temperature="90" weather="Sunny" />
-        <Day date="0-1-1" temperature="90" weather="Sunny" />
-        <Day date="1-1-1" temperature="25" weather="Sunny" />
-        <Day date="1-1-1" temperature="90" weather="Sunny" />
+        {parsedData.map(day => (
+            //console.log(day),
+            <div className="date-forecast-key" key={day.date}>
+            <Day date={day.date} temperature={day.temperature} weather={day.weather} icon={day.icon}/>
+            </div>
+        ))}
+        
             </div>
   );
+}
+
+Forecast.PropTypes = {
+    data: PropTypes.object,
 }
 
 export default Forecast;

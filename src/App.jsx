@@ -1,9 +1,8 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
-import SearchForm from './SearchForm'
-import Forecast from './Forecast'
-
+import SearchForm from './SearchForm.jsx'
+import Forecast from './Forecast.jsx'
+import data from "./data/data.js"
 
 function App() {
 
@@ -11,7 +10,7 @@ function App() {
     <div className='header'>  
     <header>Weather Report</header>
     <SearchForm/>
-    <Forecast/>
+    <Forecast data={data}/>
     </div>
   )
 }

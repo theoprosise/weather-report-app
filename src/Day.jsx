@@ -3,12 +3,13 @@ import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
 import "./Day.css";
 
-function Day({date, temperature, weather}) {
+function Day({date, temperature, weather, icon}) {
   return (
        <div className="day-container">
-        <p>Date = {date}</p>
-        <p className={temperature >= 60 ? "hot" : "cold"}>Temperature = {temperature}</p>
-        <p>Weather = {weather}</p>
+        <h2>{date}</h2>
+        <img src={`http://openweathermap.org/img/wn/${icon}.png`}/>
+        <p className={temperature >= 60 ? "hot" : "cold"}>{temperature}</p>
+        <p>{weather}</p>
         </div>
   );
 }
